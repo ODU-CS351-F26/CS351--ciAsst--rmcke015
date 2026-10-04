@@ -25,4 +25,5 @@ jobs:
     - name: Build, test, and deploy reports
       run: ./gradlew deployReports
       env:
-        GRGIT_USER: ${{ secrets.GITHUB_TOKEN }}
+        GRGIT_USER: x-access-token
+        GRGIT_PASS: ${{ secrets.GITHUB_TOKEN }}
