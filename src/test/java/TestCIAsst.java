@@ -14,5 +14,9 @@ public class TestCIAsst {
         CIAsst cia = new CIAsst();
         assertEquals (1, cia.add1(1));
     }
-
+    
+    @Test
+    public final void easyPass() {
+        assertEquals(1,1);
+    }
 }
