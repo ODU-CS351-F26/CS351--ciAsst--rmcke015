@@ -50,7 +50,7 @@ task reports {
 }
 
 gitPublish {
-    repoUri = 'git@github.com:ODU-CS351-F26/CS351--exercise-documentation--rmcke015.git'
+    repoUri = 'git@github.com:ODU-CS351-F26/CS351--ciAsst--rmcke015.git'
     branch = 'gh-pages'
 
     contents {
