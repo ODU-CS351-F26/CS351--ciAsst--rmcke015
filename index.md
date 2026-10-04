@@ -3,6 +3,6 @@
 Rajwaun McKenzie
 
 * [Tests](./tests/test/)
-* [Javadoc](./javadoc/)
+* [JavaDoc](./javadoc/)
 * [SpotBugs](./spotbugs/main.html)
 
