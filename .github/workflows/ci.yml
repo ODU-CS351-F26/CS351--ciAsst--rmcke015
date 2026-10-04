@@ -4,6 +4,9 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: write
+
 jobs:
   build:
 
@@ -18,5 +21,8 @@ jobs:
         distribution: 'temurin'
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: Build and test
-      run: ./gradlew build
+
+    - name: Build, test, and deploy reports
+      run: ./gradlew deployReports
+      env:
+        GRGIT_USER: ${{ secrets.GITHUB_TOKEN }}
