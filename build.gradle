@@ -1,6 +1,7 @@
 plugins {
    id 'java'
    id 'application'
+   id 'com.github.spotbugs' version '6.5.12'
    id 'org.ajoberstar.git-publish' version '4.2.0'
 }
 
@@ -32,6 +33,17 @@ application { //Allows  ./gradlew run --args=path-to-test-data
     mainClass = 'edu.odu.cs.MostCommonWords'
 }
 
+spotbugs {
+    ignoreFailures = true
+}
+
+spotbugsMain {
+    reports {
+        html.required = true
+        xml.required = false
+    }
+}
+
 task copyHtml(type: Copy) {
     from 'src/main/html'
     into 'build/reports'
@@ -47,6 +59,7 @@ task reports {
     dependsOn build
     dependsOn copyHtml
     dependsOn copyDocs
+    dependsOn spotbugsMain
 }
 
 gitPublish {
